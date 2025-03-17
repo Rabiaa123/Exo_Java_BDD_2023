@@ -28,5 +28,24 @@
                 int intValeur3 = Integer.parseInt(valeur3);
                 
                 // Vérification si C est compris entre A et B
-                if ((intValeur3 > intValeur1 && intValeur3 < intValeur2
+                if ((intValeur3 > intValeur1 && intValeur3 < intValeur2) || 
+                    (intValeur3 > intValeur2 && intValeur3 < intValeur1)) {
+    %>
+                    <p>Oui, C est compris entre A et B.</p>
+    <% 
+                } else {
+    %>
+                    <p>Non, C n'est pas compris entre A et B.</p>
+    <% 
+                }
+            } catch (NumberFormatException e) {
+    %>
+                <p style="color:red;">Veuillez entrer des valeurs numériques valides.</p>
+    <% 
+            }
+        }
+    %>
 
+    <p><a href="index.html">Retour au sommaire</a></p>
+</body>
+</html>
