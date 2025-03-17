@@ -38,7 +38,11 @@
                     <p>Non, C n'est pas compris entre A et B.</p>
     <% 
                 }
-            } 
+            } catch (NumberFormatException e) {
+    %>
+                <p style="color:red;">Veuillez entrer des valeurs numériques valides.</p>
+    <% 
+            }
         }
     %>
 
