@@ -30,39 +30,6 @@
 <% } else { %>
     <p>Non, C n'est pas compris entre A et B.</p>
 <% } %>
-   
-<h2>Exercice 2 : Pair ou Impair ?</h2>
-    <form action="#" method="post">
-        <p>Saisir un nombre : <input type="text" name="nombre"></p>
-        <p><input type="submit" value="Vérifier"></p>
-    </form>
-
-    <%-- Récupération de la valeur saisie par l'utilisateur --%>
-    <% 
-        String nombre = request.getParameter("nombre");
-        
-        if (nombre != null && !nombre.isEmpty()) {
-            try {
-                // Conversion du nombre en entier
-                int intNombre = Integer.parseInt(nombre);
-
-                // Vérification si le nombre est pair ou impair
-                if (intNombre % 2 == 0) {
-    %>
-                    <p>Le nombre <%= intNombre %> est pair.</p>
-    <% 
-                } else {
-    %>
-                    <p>Le nombre <%= intNombre %> est impair.</p>
-    <% 
-                }
-            } catch (NumberFormatException e) {
-    %>
-                <p style="color:red;">Veuillez entrer un nombre valide.</p>
-    <% 
-            }
-        }
-    %>
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
 </html>
