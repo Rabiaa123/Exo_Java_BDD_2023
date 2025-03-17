@@ -27,7 +27,11 @@
 
 <h2>Exercice 1 : Le carré d'étoiles</h2>
 <p>Ecrire le code afin de produire un carré d'étoile</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
+    <pre>
+    <% for (int i = 1; i <= n; i++) { %>
+        <% for (int j = 1; j <= n; j++) { %>*<% } %>
+    <% } %>
+    </pre>
 <p>*****</br>*****</br>*****</br>*****</br>*****</p>
 
 <h2>Exercice 2 : Triangle rectangle gauche</h2>
