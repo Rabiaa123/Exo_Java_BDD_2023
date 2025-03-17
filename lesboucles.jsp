@@ -56,7 +56,7 @@
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
 <p>
     <% for (int i = 1; i <= cpt; i++) { %>
-        <% for (int j = 1; j <= (cpt - i); j++) { %>&nbsp;<% } %>
+        <% for (int j = 1; j <= (cpt - i); j++) { %>&nbsp;&nbsp;<% } %>
         <% for (int k = 1; k <= i; k++) { %>*<% } %>
         <br>
     <% } %>
@@ -77,30 +77,25 @@
 <p>
     <%-- Partie supérieure du losange --%>
     <% for (int i = 1; i <= cpt; i++) { %>
-        <% for (int j = 1; j <= (cpt - i); j++) { %>&nbsp;<% } %>
+        <% for (int j = 1; j <= (cpt - i); j++) { %>&nbsp;&nbsp;<% } %>
         <% for (int k = 1; k <= i; k++) { %>*<% } %>
         <br>
     <% } %>
 
     <%-- Partie inférieure du losange --%>
     <% for (int i = cpt; i >= 1; i--) { %>
-        <% for (int j = 1; j <= (cpt - i); j++) { %>&nbsp;<% } %>
+        <% for (int j = 1; j <= (cpt - i); j++) { %>&nbsp;&nbsp;<% } %>
         <% for (int k = 1; k <= i; k++) { %>*<% } %>
         <br>
     <% } %>
 </p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;***</br>&nbsp;&nbsp;****</br>*****</p>
-<p>*****</br>&nbsp;&nbsp;****</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</p>
-
 <h2>Exercice 7 : La table de multiplication</h2>
 <p>Ecrire le code afin de créser une table de multiplication</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>5 x 1 = 5</p>
-<p>5 x 2 = 10</p>
-<p>5 x 3 = 15</p>
-<p>5 x 4 = 20</p>
-<p>5 x 5 = 25</p>
+<p>
+    <% for (int i = 1; i <= 10; i++) { %>
+        <%= cpt %> x <%= i %> = <%= (cpt * i) %> <br>
+    <% } %>
+</p>
 
 <% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
