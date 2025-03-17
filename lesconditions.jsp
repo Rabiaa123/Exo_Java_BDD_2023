@@ -5,6 +5,7 @@
 </head>
 <body bgcolor=white>
 <h1>Exercices sur les conditions</h1>
+<h2>Exercice 1 : Comparaison 1</h2>
 <form action="#" method="post">
     <p>Saisir la valeur A : <input type="text" id="inputValeur" name="valeur1">
     <p>Saisir la valeur B : <input type="text" id="inputValeur" name="valeur2">
@@ -30,20 +31,38 @@
     <p>Non, C n'est pas compris entre A et B.</p>
 <% } %>
    
-    
-<h2>Exercice 1 : Comparaison 1</h2>
-<p>Ecrire un programme qui demande à l'utilisateur de saisir 3 valeurs (des chiffres),</br>
-A, B et C et dites nous si la valeur de C est comprise entre A et B.</br>
-Exemple :</br>
-A = 10</br>
-B = 20</br>
-C = 15</br>
-Oui C est compris entre A et B</p>
-
 <h2>Exercice 2 : Pair ou Impair ?</h2>
-<p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
+    <form action="#" method="post">
+        <p>Saisir un nombre : <input type="text" name="nombre"></p>
+        <p><input type="submit" value="Vérifier"></p>
+    </form>
 
-<% } %>
+    <%-- Récupération de la valeur saisie par l'utilisateur --%>
+    <% 
+        String nombre = request.getParameter("nombre");
+        
+        if (nombre != null && !nombre.isEmpty()) {
+            try {
+                // Conversion du nombre en entier
+                int intNombre = Integer.parseInt(nombre);
+
+                // Vérification si le nombre est pair ou impair
+                if (intNombre % 2 == 0) {
+    %>
+                    <p>Le nombre <%= intNombre %> est pair.</p>
+    <% 
+                } else {
+    %>
+                    <p>Le nombre <%= intNombre %> est impair.</p>
+    <% 
+                }
+            } catch (NumberFormatException e) {
+    %>
+                <p style="color:red;">Veuillez entrer un nombre valide.</p>
+    <% 
+            }
+        }
+    %>
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
 </html>
